@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GitHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <br><br>
+  <div class="container" style="background-color: rgb(222, 243, 240);height: 220px;">
+    <br><br>
+    <img src="assets/Images/GitHub-Logo.png" class="img" ><img src="assets/Images/images.png" class="imag">
+  </div>
+  <hr>
+  <div class="container">
+    <form action="" class="form-search">
+      <div class="input-group">
+        <input type="search" class="form-control border-secondary py-2" placeholder="GitHub UserName" [(ngModel)]="amazina">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" (click)="reba()">
+              <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr><hr>
+    <div class="panel-body" *ngIf="userz">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="{{userz.avatar_url}}" class="img-circle img-responsive">
+        </div>
+        <hr>
+        <div class="col-sm-5">
+          <ul class="list-group">
+            <li class="list-group-item">Name: <h4><strong>{{userz.name}}</strong></h4></li>
+            <li class="list-group-item">Bio: {{userz.bio}}</li>
+            <li class="list-group-item" target="_blank">GitHub Link: <a href="{{userz.html_url}}">{{userz.html_url}}</a></li>
+            <li class="list-group-item">Email: {{userz.email}}</li>
+            <li class="list-group-item">Location: {{userz.Location}}</li>
+            <li class="list-group-item">Repositories: {{userz.public_repos}}</li>
+          </ul>
+        </div>
+        <!-- <div class="col-sm-4">
+          <div class="panel-Heading">
+            <h3>Repository</h3>
+          </div>
+          <div class="panel-body" *ngFor="let repo of repos">
+            <p>
+              {{repo.name}} 
+            </p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+</body>
+</html>
